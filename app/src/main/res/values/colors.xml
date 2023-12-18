@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="Menu_bar_Color">#61137f</color>
+    <color name="Red">#FFE91E63</color>
+    <color name="Blue">#3F51B5</color>
+    <color name="Cartcolors">#F4F2F8</color>
+    <color name="Green">#3EA648</color>
+    <color name="my_light_primary">#00897B</color>
+
+</resources>

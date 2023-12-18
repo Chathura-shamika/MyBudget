@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "1090098689068",
+    "firebase_url": "https://mybudget-dd07d-default-rtdb.firebaseio.com",
+    "project_id": "mybudget-dd07d",
+    "storage_bucket": "mybudget-dd07d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1090098689068:android:cbb7609b0e84336dc0cd89",
+        "android_client_info": {
+          "package_name": "com.admd.mybudget"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDd1AtV6IYh6NTdAwMLSMbQ-QLtuMXoW3M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1090098689068:android:67d8df4676d9c200c0cd89",
+        "android_client_info": {
+          "package_name": "com.example.mybudget"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDd1AtV6IYh6NTdAwMLSMbQ-QLtuMXoW3M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

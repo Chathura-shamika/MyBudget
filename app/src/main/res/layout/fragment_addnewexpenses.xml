@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="15dp"
+    android:gravity="center">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/textViewExpenses"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="start"
+            android:text="Add New Expenses"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"/>
+
+        <RelativeLayout
+            android:id="@+id/linearLayoutType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp">
+
+            <TextView
+                android:id="@+id/textViewExpensesType"
+                android:layout_width="77dp"
+                android:layout_height="wrap_content"
+                android:text="Type"
+                android:textStyle="bold"
+                android:layout_marginEnd="5dp"/>
+
+            <EditText
+                android:id="@+id/expense_type_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Expenses Type"
+                android:layout_toEndOf="@+id/textViewExpensesType"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/linearLayoutDateTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            tools:ignore="ExtraText">
+
+            <TextView
+                android:id="@+id/textViewDateTime"
+                android:layout_width="77dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:text="Date &amp; Time"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/date_time_edit_text"
+                android:layout_width="236dp"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/textViewDateTime"
+                android:focusable="false"
+                android:hint="Select Date"
+                android:inputType="none" />
+
+            <ImageButton
+                android:id="@+id/date_picker_button"
+                android:layout_width="29dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="3dp"
+                android:layout_toEndOf="@+id/date_time_edit_text"
+                android:src="@drawable/calender" /> <!-- Replace with your calendar icon -->
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/linearLayoutAmount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp">
+
+            <TextView
+                android:id="@+id/textViewAmount"
+                android:layout_width="77dp"
+                android:layout_height="wrap_content"
+                android:text="Amount"
+                android:textStyle="bold"
+                android:layout_marginEnd="5dp"/>
+
+            <EditText
+                android:id="@+id/amount_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Amount"
+                android:inputType="numberDecimal"
+                android:layout_toEndOf="@+id/textViewAmount"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/linearLayoutDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp">
+
+            <TextView
+                android:id="@+id/textViewDescription"
+                android:layout_width="77dp"
+                android:layout_height="wrap_content"
+                android:text="Description"
+                android:textStyle="bold"
+                android:layout_marginEnd="5dp"/>
+
+            <EditText
+                android:id="@+id/description_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="@string/description"
+                android:inputType="textLongMessage"
+                android:layout_toEndOf="@+id/textViewDescription"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayoutButtons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp">
+
+            <Button
+                android:id="@+id/submit_expenses"
+                android:layout_width="160dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="5dp"
+                android:text="@string/submit" />
+
+            <Button
+                android:id="@+id/cancel_button"
+                android:layout_width="160dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="5dp"
+                android:text="@string/cancel"
+                app:backgroundTint="#AE0A41" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

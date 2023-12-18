@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:padding="5dp"
+    android:gravity="center_vertical"
+    android:background="#F1EBF5">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="391dp"
+        android:layout_height="58dp">
+
+        <TextView
+            android:id="@+id/menubar"
+            android:layout_width="29dp"
+            android:layout_height="25dp"
+            android:gravity="center"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:drawableTopCompat="@drawable/hamburge"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.515"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="16dp" />
+
+        <TextView
+            android:layout_width="65dp"
+            android:layout_height="15dp"
+            android:text="@string/app_name"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/menubar"
+            app:layout_constraintHorizontal_bias="0.673"
+            app:layout_constraintStart_toStartOf="@+id/help_top_bar"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/about_top_bar"
+            android:layout_width="47dp"
+            android:layout_height="53dp"
+            android:layout_marginEnd="20dp"
+            android:gravity="center"
+            android:text="About"
+            android:textSize="12sp"
+            app:drawableTopCompat="@drawable/about"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/logout_top_bar"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.636" />
+
+        <TextView
+            android:id="@+id/help_top_bar"
+            android:layout_width="48dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="20dp"
+            android:gravity="center"
+            android:text="Help"
+            android:textSize="12sp"
+            app:drawableTopCompat="@drawable/help"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/about_top_bar"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+
+        <TextView
+            android:id="@+id/logout_top_bar"
+            android:layout_width="49dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="28dp"
+            android:gravity="center"
+            android:text="@string/logout"
+            android:textSize="12sp"
+            app:drawableTopCompat="@drawable/logout"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>
