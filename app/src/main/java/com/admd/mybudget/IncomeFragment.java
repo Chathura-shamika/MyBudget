@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -25,6 +26,8 @@ public class IncomeFragment extends Fragment {
     private ProgressBar progressBar;
     private TextView totalIncomeTextView;
     private FirebaseFirestore firestore;
+    private String userID;
+    private FirebaseAuth mAuth;
     private CollectionReference incomeCollection;
 
     @Override
@@ -35,6 +38,7 @@ public class IncomeFragment extends Fragment {
         progressBar = view.findViewById(R.id.progressBar2);
         totalIncomeTextView = view.findViewById(R.id.dispayamountofincome);
         firestore = FirebaseFirestore.getInstance();
+        mAuth= FirebaseAuth.getInstance();
         incomeCollection = firestore.collection("income");
 
         fetchIncomeData();
@@ -52,6 +56,7 @@ public class IncomeFragment extends Fragment {
             progressBar.setVisibility(View.GONE);
 
             if (task.isSuccessful()) {
+                userID = mAuth.getCurrentUser().getUid();
                 QuerySnapshot querySnapshot = task.getResult();
                 if (querySnapshot != null) {
                     for (DocumentSnapshot documentSnapshot : querySnapshot.getDocuments()) {
@@ -59,13 +64,16 @@ public class IncomeFragment extends Fragment {
                         String dateTime = documentSnapshot.getString("date_time");
                         String description = documentSnapshot.getString("description");
                         String incomeType = documentSnapshot.getString("income_type");
+                        String userIDD = documentSnapshot.getString("user_ID");
 
                         String content = "Date: " + dateTime + "                    LKR: " + amount + "\n"
                                 + "Income Type: " + incomeType + "\n"
                                 + "Description: " + description + "\n\n";
 
-                        CardView cardView = createCardView(content, documentSnapshot);
-                        linearContainer.addView(cardView);
+                        if (userIDD != null && userIDD.equals(userID)) {
+                            CardView cardView = createCardView(content, documentSnapshot);
+                            linearContainer.addView(cardView);
+                        }
                     }
 
                     calculateTotalIncome(querySnapshot);
@@ -105,12 +113,14 @@ public class IncomeFragment extends Fragment {
         for (DocumentSnapshot documentSnapshot : snapshot.getDocuments()) {
             if (documentSnapshot.contains("amount")) {
                 String amountString = documentSnapshot.getString("amount");
-
-                try {
-                    double amount = Double.parseDouble(amountString);
-                    totalIncome += amount;
-                } catch (NumberFormatException e) {
-                    e.printStackTrace();
+                String userIDD = documentSnapshot.getString("user_ID");
+                if (userIDD != null && userIDD.equals(userID)) {
+                    try {
+                        double amount = Double.parseDouble(amountString);
+                        totalIncome += amount;
+                    } catch (NumberFormatException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         }
