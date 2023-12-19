@@ -4,24 +4,81 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:padding="15dp"
+    android:padding="10dp"
     android:gravity="center">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="390dp"
+        android:layout_height="513dp"
         android:orientation="vertical"
-        android:padding="16dp">
+        android:padding="10dp"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:padding="15dp">
+
+            <TextView
+                android:id="@+id/Billpayment"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:text="Bill"
+                android:gravity="center"
+                android:layout_margin="5dp"
+                app:drawableTopCompat="@drawable/bill"
+                android:background="#D4DAFF"
+                android:padding="5dp"/>
+
+            <TextView
+                android:id="@+id/FinancePyament"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:text="Finance"
+                android:gravity="center"
+                android:layout_margin="5dp"
+                app:drawableTopCompat="@drawable/finance"
+                android:background="#D4FFDA"
+                android:padding="5dp"/>
+
+            <TextView
+                android:id="@+id/AcademicFee"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:text="Acadamic"
+                android:gravity="center"
+                android:layout_margin="5dp"
+                app:drawableTopCompat="@drawable/academic"
+                android:background="#FFE7D4"/>
+
+            <TextView
+                android:id="@+id/Otherpaymnet"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:text="Other"
+                android:gravity="center"
+                android:layout_margin="5dp"
+                app:drawableTopCompat="@drawable/other"
+                android:background="#FFD4F8"
+                android:padding="5dp"/>
+        </LinearLayout>
 
         <TextView
             android:id="@+id/textViewExpenses"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
             android:layout_marginTop="16dp"
             android:gravity="start"
+            android:textSize="16sp"
             android:text="Add New Expenses"
-            android:textStyle="bold"
-            android:layout_gravity="center_horizontal"/>
+            android:textStyle="bold" />
 
         <RelativeLayout
             android:id="@+id/linearLayoutType"
@@ -33,16 +90,17 @@
                 android:id="@+id/textViewExpensesType"
                 android:layout_width="77dp"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
                 android:text="Type"
-                android:textStyle="bold"
-                android:layout_marginEnd="5dp"/>
+
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/expense_type_edit_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Expenses Type"
-                android:layout_toEndOf="@+id/textViewExpensesType"/>
+                android:layout_toEndOf="@+id/textViewExpensesType"
+                android:hint="Expenses Type" />
 
         </RelativeLayout>
 
@@ -92,17 +150,17 @@
                 android:id="@+id/textViewAmount"
                 android:layout_width="77dp"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
                 android:text="Amount"
-                android:textStyle="bold"
-                android:layout_marginEnd="5dp"/>
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/amount_edit_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/textViewAmount"
                 android:hint="Amount"
-                android:inputType="numberDecimal"
-                android:layout_toEndOf="@+id/textViewAmount"/>
+                android:inputType="numberDecimal" />
 
         </RelativeLayout>
 
@@ -116,17 +174,17 @@
                 android:id="@+id/textViewDescription"
                 android:layout_width="77dp"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
                 android:text="Description"
-                android:textStyle="bold"
-                android:layout_marginEnd="5dp"/>
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/description_edit_text"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:layout_toEndOf="@+id/textViewDescription"
                 android:hint="@string/description"
-                android:inputType="textLongMessage"
-                android:layout_toEndOf="@+id/textViewDescription"/>
+                android:inputType="textLongMessage" />
 
         </RelativeLayout>
 
@@ -134,9 +192,9 @@
             android:id="@+id/linearLayoutButtons"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:gravity="center"
-            android:orientation="horizontal"
-            android:layout_marginTop="16dp">
+            android:orientation="horizontal">
 
             <Button
                 android:id="@+id/submit_expenses"
