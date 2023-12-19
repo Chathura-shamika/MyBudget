@@ -9,6 +9,7 @@
     android:padding="15dp"
     tools:context=".MainActivity">
 
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -26,7 +27,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
-
 
 
                 <TextView
@@ -62,7 +62,13 @@
                     android:layout_margin="10dp"
                     android:text="@string/sign_in"
                     android:textAppearance="?android:textAppearanceMedium" />
-
+                <ProgressBar
+                    android:id="@+id/progressBarloin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:visibility="gone"
+                    tools:ignore="MissingConstraints" />
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
@@ -80,8 +86,8 @@
 
                     />
 
-
             </LinearLayout>
+
         </ScrollView>
 
         <ImageButton
@@ -92,12 +98,14 @@
             android:gravity="center"
             android:importantForAccessibility="no"
             android:scaleType="centerInside"
-            android:src="@mipmap/logo"
+            android:src="@drawable/mybuget"
             app:layout_constraintBottom_toTopOf="@+id/scrollView5"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.837" />
+
+
 
         <TextView
             android:id="@+id/textView4"
@@ -129,13 +137,9 @@
             app:layout_constraintStart_toEndOf="@+id/textView4"
             app:layout_constraintTop_toBottomOf="@+id/scrollView5"
             app:layout_constraintVertical_bias="0.0" />
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <ProgressBar
-        android:id="@+id/progressBarloin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:visibility="gone" />
 
 </LinearLayout>

@@ -14,14 +14,14 @@
         <ImageButton
             android:id="@+id/imageButton"
             android:layout_width="140dp"
-            android:layout_height="wrap_content"
+            android:layout_height="140dp"
             android:layout_marginTop="76dp"
             android:adjustViewBounds="true"
             android:background="@color/white"
             android:gravity="center"
             android:importantForAccessibility="no"
             android:scaleType="centerInside"
-            android:src="@mipmap/logo"
+            android:src="@drawable/mybuget"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
@@ -39,6 +39,22 @@
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="11dp">
 
+            <EditText
+                android:id="@+id/reg_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:autofillHints=""
+                android:hint="@string/full_name"
+                 />
+            <EditText
+                android:id="@+id/mobilenumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:autofillHints=""
+                android:hint="Mobile Number"
+                 />
 
             <EditText
                 android:id="@+id/reg_email_login"
@@ -63,6 +79,13 @@
                 android:layout_width="180dp"
                 android:layout_height="50dp"
                 android:text="@string/reg_form_submit"
+                tools:ignore="MissingConstraints" />
+            <ProgressBar
+                android:id="@+id/progressBarloin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
                 tools:ignore="MissingConstraints" />
         </LinearLayout>
 

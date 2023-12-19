@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         mAuth = FirebaseAuth.getInstance();
 
-        // Move the initialization here
+
         mSignupHere = findViewById(R.id.Signup_login);
 
         loginDetails();
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         mPass = findViewById(R.id.password_login);
         btnLogin = findViewById(R.id.button_login);
         mForgetPassword = findViewById(R.id.forget_password_login);
-        progressBar = findViewById(R.id.progressBarloin); // Initialize progress bar
+        progressBar = findViewById(R.id.progressBarloin);
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override

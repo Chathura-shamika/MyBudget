@@ -37,7 +37,6 @@ public class dashboardFragment extends Fragment {
         incomeCollection = firestore.collection("income");
         expensesCollection = firestore.collection("expenses");
 
-        // Fetch data from Firestore
         fetchData();
 
         return view;

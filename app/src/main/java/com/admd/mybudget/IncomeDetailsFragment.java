@@ -26,7 +26,6 @@ public class IncomeDetailsFragment extends DialogFragment {
         TextView detailsTextView = view.findViewById(R.id.detailsTextView);
         Button editButton = view.findViewById(R.id.editButton);
         Button deleteButton = view.findViewById(R.id.deleteButton);
-
         // Extract details from the DocumentSnapshot
         String amount = documentSnapshot.getString("amount");
         String dateTime = documentSnapshot.getString("date_time");

@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.text.SimpleDateFormat;
@@ -22,12 +23,14 @@ import java.util.Map;
 
 public class addnewincomeFragment extends Fragment {
 
+    public static final String TAG = "TAG";
     private EditText incomeTypeEditText;
     private EditText dateTimeEditText1;
     private EditText amountEditText;
     private EditText descriptionEditText;
     private Button submitIncomeButton;
-
+    private String userID;
+    private FirebaseAuth mAuth;
     private FirebaseFirestore firestore;
     private Calendar calendar1;
 
@@ -36,7 +39,7 @@ public class addnewincomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_addnewincome, container, false);
 
         initializeViews(view);
-
+        mAuth= FirebaseAuth.getInstance();
         firestore = FirebaseFirestore.getInstance();
 
         submitIncomeButton.setOnClickListener(v -> {
@@ -123,7 +126,10 @@ public class addnewincomeFragment extends Fragment {
         String amount = amountEditText.getText().toString();
         String description = descriptionEditText.getText().toString();
 
-        Map<String, Object> income = new HashMap<>();
+        userID = mAuth.getCurrentUser().getUid();
+
+        Map<String,Object> income =new HashMap<>();
+        income.put("user_ID",userID);
         income.put("income_type", incomeType);
         income.put("date_time", dateTime);
         income.put("amount", amount);
@@ -132,6 +138,7 @@ public class addnewincomeFragment extends Fragment {
         firestore.collection("income")
                 .add(income)
                 .addOnSuccessListener(documentReference -> {
+
                     Toast.makeText(requireContext(), "Income Added Successfully..!", Toast.LENGTH_SHORT).show();
                     clearInputFields();
                     enableInputFields();

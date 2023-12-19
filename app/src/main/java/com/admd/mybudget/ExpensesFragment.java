@@ -60,7 +60,7 @@ public class ExpensesFragment extends Fragment {
                         String description = documentSnapshot.getString("description");
                         String expenseType = documentSnapshot.getString("expense_type");
 
-                        String expenseText = "Date: " + dateTime + "                              LKR: " + amount + "\n"
+                        String expenseText = "Date: " + dateTime + "                                                    LKR: " + amount + "\n"
                                 + "Expense Type: " + expenseType + "\n"
                                 + "Description: " + description + "\n\n";
 

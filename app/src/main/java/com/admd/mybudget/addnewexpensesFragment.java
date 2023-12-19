@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.text.SimpleDateFormat;
@@ -28,7 +29,8 @@ public class addnewexpensesFragment extends Fragment {
     private EditText amountEditText;
     private EditText descriptionEditText;
     private Button submitExpensesButton;
-
+    private String userID;
+    private FirebaseAuth mAuth;
     private FirebaseFirestore firestore;
     private Calendar calendar;
 
@@ -38,6 +40,7 @@ public class addnewexpensesFragment extends Fragment {
 
         initializeViews(view);
 
+        mAuth= FirebaseAuth.getInstance();
         firestore = FirebaseFirestore.getInstance();
 
         submitExpensesButton.setOnClickListener(v -> {
@@ -122,7 +125,10 @@ public class addnewexpensesFragment extends Fragment {
         String amount = amountEditText.getText().toString();
         String description = descriptionEditText.getText().toString();
 
+        userID = mAuth.getCurrentUser().getUid();
+
         Map<String, Object> expenses = new HashMap<>();
+        expenses.put("user_ID",userID);
         expenses.put("expense_type", expenseType);
         expenses.put("date_time", dateTime);
         expenses.put("amount", amount);

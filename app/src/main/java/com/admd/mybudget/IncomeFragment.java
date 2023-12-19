@@ -37,97 +37,84 @@ public class IncomeFragment extends Fragment {
         firestore = FirebaseFirestore.getInstance();
         incomeCollection = firestore.collection("income");
 
-        // Fetch data from Firestore
-        fetchData();
+        fetchIncomeData();
+
         Button addNewIncomeButton = view.findViewById(R.id.addnewincomebutton);
         addNewIncomeButton.setOnClickListener(v -> openAddNewIncomeFragment());
+
         return view;
     }
 
-    private void fetchData() {
+    private void fetchIncomeData() {
         progressBar.setVisibility(View.VISIBLE);
 
-        // Fetch income data
-        incomeCollection.get().addOnCompleteListener(incomeTask -> {
+        incomeCollection.get().addOnCompleteListener(task -> {
             progressBar.setVisibility(View.GONE);
 
-            if (incomeTask.isSuccessful()) {
-                QuerySnapshot incomeSnapshot = incomeTask.getResult();
-                if (incomeSnapshot != null) {
-                    processSnapshot(incomeSnapshot);
-                    calculateTotalIncome(incomeSnapshot);
+            if (task.isSuccessful()) {
+                QuerySnapshot querySnapshot = task.getResult();
+                if (querySnapshot != null) {
+                    for (DocumentSnapshot documentSnapshot : querySnapshot.getDocuments()) {
+                        String amount = documentSnapshot.getString("amount");
+                        String dateTime = documentSnapshot.getString("date_time");
+                        String description = documentSnapshot.getString("description");
+                        String incomeType = documentSnapshot.getString("income_type");
+
+                        String content = "Date: " + dateTime + "                    LKR: " + amount + "\n"
+                                + "Income Type: " + incomeType + "\n"
+                                + "Description: " + description + "\n\n";
+
+                        CardView cardView = createCardView(content, documentSnapshot);
+                        linearContainer.addView(cardView);
+                    }
+
+                    calculateTotalIncome(querySnapshot);
                 }
             } else {
-                // Handle errors for income
+                // Handle errors
             }
         });
     }
 
-    private void processSnapshot(QuerySnapshot snapshot) {
-        linearContainer.removeAllViews(); // Clear existing views
-        for (DocumentSnapshot documentSnapshot : snapshot.getDocuments()) {
-            // Get data from the document
-            String amount = documentSnapshot.getString("amount");
-            String dateTime = documentSnapshot.getString("date_time");
-            String description = documentSnapshot.getString("description");
-            String type = documentSnapshot.getString("income_type");
-
-            // Create a string with improved UI design
-            String itemText = "Date: " + dateTime + "                              LKR: " + amount + "\n"
-                    + "Income Type: " + type + "\n"
-                    + "Description: " + description + "\n\n";
-
-            // Add the item to the LinearLayout with improved UI design
-            CardView cardView = createCardView(createItemTextView(itemText), documentSnapshot);
-            linearContainer.addView(cardView);
-        }
-    }
-
-    private TextView createItemTextView(String itemText) {
-        TextView itemTextView = new TextView(requireContext());
-        itemTextView.setText(itemText);
-        itemTextView.setTextSize(15); // Set text size
-        itemTextView.setTextColor(getResources().getColor(R.color.black)); // Set text color
-        // You can further customize the TextView properties here
-        return itemTextView;
-    }
-
-    private CardView createCardView(View content, DocumentSnapshot documentSnapshot) {
+    private CardView createCardView(String content, DocumentSnapshot documentSnapshot) {
         CardView cardView = new CardView(requireContext());
         cardView.setLayoutParams(new CardView.LayoutParams(
                 CardView.LayoutParams.MATCH_PARENT,
                 CardView.LayoutParams.WRAP_CONTENT
         ));
         cardView.setRadius(5); // Set corner radius
-        cardView.addView(content);
+        TextView incomeTextView = createIncomeTextView(content);
+        cardView.addView(incomeTextView);
 
-        cardView.setOnClickListener(v -> {
-            // Display details popup when the card is clicked
-            showDetailsPopup(documentSnapshot);
-        });
+        cardView.setOnClickListener(v -> showDetailsPopup(documentSnapshot));
 
         return cardView;
+    }
+
+    private TextView createIncomeTextView(String incomeText) {
+        TextView incomeTextView = new TextView(requireContext());
+        incomeTextView.setText(incomeText);
+        incomeTextView.setTextSize(15);
+        incomeTextView.setTextColor(getResources().getColor(R.color.black));
+        return incomeTextView;
     }
 
     private void calculateTotalIncome(QuerySnapshot snapshot) {
         double totalIncome = 0.00;
 
         for (DocumentSnapshot documentSnapshot : snapshot.getDocuments()) {
-            // Assuming 'amount' is the field in Firestore for income amount
             if (documentSnapshot.contains("amount")) {
                 String amountString = documentSnapshot.getString("amount");
 
-                // Convert the string amount to double
                 try {
                     double amount = Double.parseDouble(amountString);
                     totalIncome += amount;
                 } catch (NumberFormatException e) {
-                    // Handle the case where the amount cannot be parsed
                     e.printStackTrace();
                 }
             }
         }
-        // Display the total income in the TextView
+
         totalIncomeTextView.setText("LKR: " + String.format("%.2f", totalIncome));
     }
 

@@ -41,5 +41,6 @@
     <string name="sign_up_here">Sign Up Here</string>
     <string name="already_hav_an_account">Already have an account?</string>
     <string name="sign_in_here">Sign in here</string>
+    <string name="full_name">Full Name</string>
 
-    </resources>
+</resources>
