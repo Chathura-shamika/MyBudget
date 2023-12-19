@@ -72,7 +72,7 @@ public class HomeActivity extends AppCompatActivity {
         topbarabout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), HomeActivity.class);
+                Intent intent = new Intent(v.getContext(), About.class);
                 v.getContext().startActivity(intent);
             }
         });

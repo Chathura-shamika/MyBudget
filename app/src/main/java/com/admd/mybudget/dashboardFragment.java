@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -21,6 +22,8 @@ public class dashboardFragment extends Fragment {
     private TextView totalExpensesTextView;
     private TextView balanceTextView;
     private FirebaseFirestore firestore;
+    private String userID;
+    private FirebaseAuth mAuth;
     private CollectionReference incomeCollection;
     private CollectionReference expensesCollection;
 
@@ -34,6 +37,7 @@ public class dashboardFragment extends Fragment {
         balanceTextView = view.findViewById(R.id.totalBalance);
 
         firestore = FirebaseFirestore.getInstance();
+        mAuth= FirebaseAuth.getInstance();
         incomeCollection = firestore.collection("income");
         expensesCollection = firestore.collection("expenses");
 
@@ -53,19 +57,19 @@ public class dashboardFragment extends Fragment {
                 QuerySnapshot incomeSnapshot = incomeTask.getResult();
                 if (incomeSnapshot != null) {
                     double totalIncome = calculateTotalAmount(incomeSnapshot);
-                    incomeTotalDashboard.setText("LKR " + totalIncome + "0");
+                    incomeTotalDashboard.setText("LKR " + totalIncome);
 
-                    // Fetch expenses data
-                    expensesCollection.get().addOnCompleteListener(expensesTask -> {
-                        if (expensesTask.isSuccessful()) {
-                            QuerySnapshot expensesSnapshot = expensesTask.getResult();
-                            if (expensesSnapshot != null) {
-                                double totalExpenses = calculateTotalAmount(expensesSnapshot);
-                                totalExpensesTextView.setText("LKR " + totalExpenses + "0");
 
-                                // Calculate and display balance
-                                double balance = totalIncome - totalExpenses;
-                                balanceTextView.setText("LKR " + balance + "0");
+        expensesCollection.get().addOnCompleteListener(expensesTask -> {
+            if (expensesTask.isSuccessful()) {
+                 QuerySnapshot expensesSnapshot = expensesTask.getResult();
+                   if (expensesSnapshot != null) {
+                       double totalExpenses = calculateTotalAmount(expensesSnapshot);
+                       totalExpensesTextView.setText("LKR " + totalExpenses);
+
+         // Calculate and display balance
+         double balance = totalIncome - totalExpenses;
+         balanceTextView.setText("LKR " + balance );
                             }
                             progressBar.setVisibility(View.GONE);
                         } else {
@@ -81,19 +85,21 @@ public class dashboardFragment extends Fragment {
 
     private double calculateTotalAmount(QuerySnapshot snapshot) {
         double totalAmount = 0.00;
-
+        userID = mAuth.getCurrentUser().getUid();
         for (DocumentSnapshot documentSnapshot : snapshot.getDocuments()) {
-            // Assuming 'amount' is the field in Firestore for income/expense amount
+
             if (documentSnapshot.contains("amount")) {
                 String amountString = documentSnapshot.getString("amount");
+                String userIDD =  documentSnapshot.getString("user_ID");
 
-                // Convert the string amount to double
-                try {
-                    double amount = Double.parseDouble(amountString);
-                    totalAmount += amount;
-                } catch (NumberFormatException e) {
-                    // Handle the case where the amount cannot be parsed
-                    e.printStackTrace();
+                if (userIDD != null && userIDD.equals(userID)) {
+                    try {
+                        double amount = Double.parseDouble(amountString);
+                         totalAmount += amount;
+                    } catch (NumberFormatException e) {
+
+                        e.printStackTrace();
+                    }
                 }
             }
         }
