@@ -11,10 +11,11 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.admd.mybudget.databinding.ContentMainBinding;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class HomeActivity extends AppCompatActivity {
 
-
+    private FirebaseAuth mAuth;
    ContentMainBinding binding;
 
     @Override
@@ -56,10 +57,12 @@ public class HomeActivity extends AppCompatActivity {
     private TextView topbarabout;
     private TextView topbarLogout;
 
+
     private void navigateFunction() {
         topbarhelp = findViewById(R.id.help_top_bar);
         topbarabout = findViewById(R.id.about_top_bar);
         topbarLogout = findViewById(R.id.logout_top_bar);
+        mAuth= FirebaseAuth.getInstance();
 
         topbarhelp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,9 +83,18 @@ public class HomeActivity extends AppCompatActivity {
         topbarLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), MainActivity.class);
-                v.getContext().startActivity(intent);
+                mAuth.signOut();
+                signOutUser();
+               
+            }
+            private void signOutUser(){
+                Intent intent = new Intent(HomeActivity.this, MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
+                finish();
             }
         });
+       
+
     }
 }
