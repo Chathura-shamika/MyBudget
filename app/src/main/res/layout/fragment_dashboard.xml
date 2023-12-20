@@ -114,6 +114,7 @@
             android:layout_weight="1"
             app:cardCornerRadius="20dp"
             app:cardElevation="5dp"
+            android:onClick="onUtilityCardClicked">
             >
 
             <RelativeLayout
@@ -145,12 +146,14 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/Finance"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:layout_weight="1"
             app:cardCornerRadius="20dp"
             app:cardElevation="5dp"
+            android:onClick="onUtilityCardClicked1"
             >
 
             <RelativeLayout
@@ -183,12 +186,14 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/Academic"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:layout_weight="1"
             app:cardCornerRadius="20dp"
             app:cardElevation="5dp"
+            android:onClick="onUtilityCardClicked2"
             >
 
             <RelativeLayout
@@ -231,12 +236,14 @@
         >
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/Mainincome"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:layout_weight="1"
             app:cardCornerRadius="20dp"
-            app:cardElevation="5dp">
+            app:cardElevation="5dp"
+            android:onClick="onUtilityCardClicked3">
 
             <RelativeLayout
                 android:layout_width="wrap_content"
@@ -268,12 +275,14 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/Extraincomecard"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:layout_weight="1"
             app:cardCornerRadius="20dp"
-            app:cardElevation="5dp">
+            app:cardElevation="5dp"
+            android:onClick="onUtilityCardClicked4">
 
             <RelativeLayout
                 android:layout_width="wrap_content"
@@ -315,12 +324,14 @@
             >
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/Profile"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
                 app:cardCornerRadius="20dp"
-                app:cardElevation="5dp">
+                app:cardElevation="5dp"
+                android:onClick="onUtilityCardClicked5">
 
                 <RelativeLayout
                     android:layout_width="wrap_content"
@@ -352,12 +363,14 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/Setting"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
                 app:cardCornerRadius="20dp"
-                app:cardElevation="5dp">
+                app:cardElevation="5dp"
+                android:onClick="onUtilityCardClicked6">
 
                 <RelativeLayout
                     android:layout_width="wrap_content"
@@ -388,12 +401,14 @@
 
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
+                android:id="@+id/Report"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
                 app:cardCornerRadius="20dp"
-                app:cardElevation="5dp">
+                app:cardElevation="5dp"
+                android:onClick="onUtilityCardClicked7">
 
                 <RelativeLayout
                     android:layout_width="wrap_content"
