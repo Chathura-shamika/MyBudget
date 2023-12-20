@@ -101,15 +101,20 @@
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
         android:orientation="horizontal"
-        android:padding="10dp">
+        android:padding="10dp"
+
+        >
+
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/Utilitycard"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:layout_weight="1"
             app:cardCornerRadius="20dp"
-            app:cardElevation="20dp">
+            app:cardElevation="5dp"
+            >
 
             <RelativeLayout
                 android:layout_width="wrap_content"
@@ -121,19 +126,19 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/imageicon"
                     android:layout_centerHorizontal="true"
-                    android:layout_marginTop="10dp"
+                    android:layout_margin="10dp"
                     android:gravity="center"
                     android:text="Utility"
                     android:textColor="@color/Blue"
-                    android:textSize="20sp"
+                    android:textSize="15sp"
                     android:textStyle="bold" />
 
                 <ImageView
                     android:id="@+id/imageicon"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     android:layout_centerHorizontal="true"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="10dp"
                     android:src="@mipmap/utility" />
             </RelativeLayout>
 
@@ -145,7 +150,8 @@
             android:layout_margin="10dp"
             android:layout_weight="1"
             app:cardCornerRadius="20dp"
-            app:cardElevation="20dp">
+            app:cardElevation="5dp"
+            >
 
             <RelativeLayout
                 android:layout_width="wrap_content"
@@ -157,19 +163,19 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/imageicon1"
                     android:layout_centerHorizontal="true"
-                    android:layout_marginTop="10dp"
+                    android:layout_margin="10dp"
                     android:gravity="center"
                     android:text="Finance"
                     android:textColor="@color/Blue"
-                    android:textSize="20sp"
+                    android:textSize="15sp"
                     android:textStyle="bold" />
 
                 <ImageView
                     android:id="@+id/imageicon1"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     android:layout_centerHorizontal="true"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="10dp"
                     android:src="@mipmap/finance" />
             </RelativeLayout>
 
@@ -182,7 +188,8 @@
             android:layout_margin="10dp"
             android:layout_weight="1"
             app:cardCornerRadius="20dp"
-            app:cardElevation="20dp">
+            app:cardElevation="5dp"
+            >
 
             <RelativeLayout
                 android:layout_width="wrap_content"
@@ -194,19 +201,19 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/imageicon3"
                     android:layout_centerHorizontal="true"
-                    android:layout_marginTop="10dp"
+                    android:layout_margin="10dp"
                     android:gravity="center"
                     android:text="Academic"
                     android:textColor="@color/Blue"
-                    android:textSize="20sp"
+                    android:textSize="15sp"
                     android:textStyle="bold" />
 
                 <ImageView
                     android:id="@+id/imageicon3"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     android:layout_centerHorizontal="true"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="10dp"
                     android:src="@mipmap/academic" />
             </RelativeLayout>
 
@@ -220,7 +227,8 @@
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
         android:orientation="horizontal"
-        android:padding="10dp">
+        android:padding="10dp"
+        >
 
         <androidx.cardview.widget.CardView
             android:layout_width="0dp"
@@ -228,31 +236,32 @@
             android:layout_margin="10dp"
             android:layout_weight="1"
             app:cardCornerRadius="20dp"
-            app:cardElevation="20dp">
+            app:cardElevation="5dp">
 
             <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center">
+                android:layout_gravity="center"
+                >
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/imageicon6"
                     android:layout_centerHorizontal="true"
-                    android:layout_marginTop="10dp"
+                    android:layout_margin="10dp"
                     android:gravity="center"
                     android:text="Main Income"
                     android:textColor="@color/Blue"
-                    android:textSize="20sp"
+                    android:textSize="15sp"
                     android:textStyle="bold" />
 
                 <ImageView
                     android:id="@+id/imageicon6"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     android:layout_centerHorizontal="true"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="10dp"
                     android:src="@mipmap/mainincome" />
             </RelativeLayout>
 
@@ -264,7 +273,7 @@
             android:layout_margin="10dp"
             android:layout_weight="1"
             app:cardCornerRadius="20dp"
-            app:cardElevation="20dp">
+            app:cardElevation="5dp">
 
             <RelativeLayout
                 android:layout_width="wrap_content"
@@ -276,19 +285,19 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/imageicon4"
                     android:layout_centerHorizontal="true"
-                    android:layout_marginTop="10dp"
+                    android:layout_margin="10dp"
                     android:gravity="center"
                     android:text="Extra Income"
                     android:textColor="@color/Blue"
-                    android:textSize="20sp"
+                    android:textSize="15sp"
                     android:textStyle="bold" />
 
                 <ImageView
                     android:id="@+id/imageicon4"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     android:layout_centerHorizontal="true"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="10dp"
                     android:src="@mipmap/extraincome" />
             </RelativeLayout>
 
@@ -302,7 +311,8 @@
             android:orientation="horizontal"
             android:layout_marginTop="10dp"
             android:padding="10dp"
-            android:layout_gravity="center">
+            android:layout_gravity="center"
+            >
 
             <androidx.cardview.widget.CardView
                 android:layout_width="0dp"
@@ -310,7 +320,7 @@
                 android:layout_margin="10dp"
                 android:layout_weight="1"
                 app:cardCornerRadius="20dp"
-                app:cardElevation="20dp">
+                app:cardElevation="5dp">
 
                 <RelativeLayout
                     android:layout_width="wrap_content"
@@ -322,19 +332,19 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/imageicon10"
                         android:layout_centerHorizontal="true"
-                        android:layout_marginTop="10dp"
+                        android:layout_margin="10dp"
                         android:gravity="center"
                         android:text="Profile"
                         android:textColor="@color/Blue"
-                        android:textSize="20sp"
+                        android:textSize="15sp"
                         android:textStyle="bold" />
 
                     <ImageView
                         android:id="@+id/imageicon10"
-                        android:layout_width="70dp"
-                        android:layout_height="70dp"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
                         android:layout_centerHorizontal="true"
-                        android:layout_marginTop="15dp"
+                        android:layout_marginTop="10dp"
                         android:src="@mipmap/profile"
                         />
                 </RelativeLayout>
@@ -347,7 +357,7 @@
                 android:layout_margin="10dp"
                 android:layout_weight="1"
                 app:cardCornerRadius="20dp"
-                app:cardElevation="20dp">
+                app:cardElevation="5dp">
 
                 <RelativeLayout
                     android:layout_width="wrap_content"
@@ -359,19 +369,19 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/imageicon11"
                         android:layout_centerHorizontal="true"
-                        android:layout_marginTop="10dp"
+                        android:layout_margin="10dp"
                         android:gravity="center"
                         android:text="Setting"
                         android:textColor="@color/Blue"
-                        android:textSize="20sp"
+                        android:textSize="15sp"
                         android:textStyle="bold" />
 
                     <ImageView
                         android:id="@+id/imageicon11"
-                        android:layout_width="70dp"
-                        android:layout_height="70dp"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
                         android:layout_centerHorizontal="true"
-                        android:layout_marginTop="15dp"
+                        android:layout_marginTop="10dp"
                         android:src="@mipmap/setting"/>
                 </RelativeLayout>
 
@@ -383,7 +393,7 @@
                 android:layout_margin="10dp"
                 android:layout_weight="1"
                 app:cardCornerRadius="20dp"
-                app:cardElevation="20dp">
+                app:cardElevation="5dp">
 
                 <RelativeLayout
                     android:layout_width="wrap_content"
@@ -395,19 +405,19 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/imageicon12"
                         android:layout_centerHorizontal="true"
-                        android:layout_marginTop="10dp"
+                        android:layout_margin="10dp"
                         android:gravity="center"
                         android:text="Report"
                         android:textColor="@color/Blue"
-                        android:textSize="20sp"
+                        android:textSize="15sp"
                         android:textStyle="bold" />
 
                     <ImageView
                         android:id="@+id/imageicon12"
-                        android:layout_width="70dp"
-                        android:layout_height="70dp"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
                         android:layout_centerHorizontal="true"
-                        android:layout_marginTop="15dp"
+                        android:layout_marginTop="10dp"
                         android:src="@mipmap/report" />
                 </RelativeLayout>
 
