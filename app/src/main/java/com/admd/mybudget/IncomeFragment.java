@@ -66,7 +66,7 @@ public class IncomeFragment extends Fragment {
                         String incomeType = documentSnapshot.getString("income_type");
                         String userIDD = documentSnapshot.getString("user_ID");
 
-                        String content = "Date: " + dateTime + "                    LKR: " + amount + "\n"
+                        String content = "Date: " + dateTime + "                                                                 LKR: " + amount + "\n"
                                 + "Income Type: " + incomeType + "\n"
                                 + "Description: " + description + "\n\n";
 
@@ -108,7 +108,7 @@ public class IncomeFragment extends Fragment {
     }
 
     private void calculateTotalIncome(QuerySnapshot snapshot) {
-        double totalIncome = 0.00;
+        float totalIncome = 0;
 
         for (DocumentSnapshot documentSnapshot : snapshot.getDocuments()) {
             if (documentSnapshot.contains("amount")) {
@@ -117,7 +117,8 @@ public class IncomeFragment extends Fragment {
                 if (userIDD != null && userIDD.equals(userID)) {
                     try {
                         double amount = Double.parseDouble(amountString);
-                        totalIncome += amount;
+                        float totalIncomeFloat = (float) amount;
+                        totalIncome += totalIncomeFloat;
                     } catch (NumberFormatException e) {
                         e.printStackTrace();
                     }

@@ -57,7 +57,8 @@ public class dashboardFragment extends Fragment {
                 QuerySnapshot incomeSnapshot = incomeTask.getResult();
                 if (incomeSnapshot != null) {
                     double totalIncome = calculateTotalAmount(incomeSnapshot);
-                    incomeTotalDashboard.setText("LKR " + totalIncome);
+                    float totalIncomeFloat = (float) totalIncome;
+                    incomeTotalDashboard.setText("LKR " +  String.format("%.2f", totalIncomeFloat));
 
 
         expensesCollection.get().addOnCompleteListener(expensesTask -> {
@@ -65,12 +66,15 @@ public class dashboardFragment extends Fragment {
                  QuerySnapshot expensesSnapshot = expensesTask.getResult();
                    if (expensesSnapshot != null) {
                        double totalExpenses = calculateTotalAmount(expensesSnapshot);
-                       totalExpensesTextView.setText("LKR " + totalExpenses);
+                       float totalexpensesFloat = (float) totalExpenses;
+                       totalExpensesTextView.setText("LKR " + String.format("%.2f", totalexpensesFloat));
 
-         // Calculate and display balance
-         double balance = totalIncome - totalExpenses;
-         balanceTextView.setText("LKR " + balance );
-                            }
+
+                       // Calculate and display balance
+                         float balance = (float) (totalIncome - totalExpenses);
+                       balanceTextView.setText("LKR " + String.format("%.2f", balance));
+
+                   }
                             progressBar.setVisibility(View.GONE);
                         } else {
                             // Handle errors for expenses
@@ -84,7 +88,7 @@ public class dashboardFragment extends Fragment {
     }
 
     private double calculateTotalAmount(QuerySnapshot snapshot) {
-        double totalAmount = 0.00;
+        float totalAmount = 0;
         userID = mAuth.getCurrentUser().getUid();
         for (DocumentSnapshot documentSnapshot : snapshot.getDocuments()) {
 
@@ -94,7 +98,8 @@ public class dashboardFragment extends Fragment {
 
                 if (userIDD != null && userIDD.equals(userID)) {
                     try {
-                        double amount = Double.parseDouble(amountString);
+                       // double amount = Double.parseDouble(amountString);
+                        float amount = Float.parseFloat(amountString);
                          totalAmount += amount;
                     } catch (NumberFormatException e) {
 
@@ -105,4 +110,5 @@ public class dashboardFragment extends Fragment {
         }
         return totalAmount;
     }
+
 }
