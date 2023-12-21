@@ -10,6 +10,8 @@ import android.widget.Toast;
 
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.CollectionReference;
@@ -44,80 +46,31 @@ public class dashboardFragment extends Fragment {
         expensesCollection = firestore.collection("expenses");
 
         fetchData();
+        CardView openProfile = view.findViewById(R.id.Profile);
+        openProfile.setOnClickListener(v ->  openProfileFragment());
 
 
         CardView utilityCard = view.findViewById(R.id.Utilitycard);
-        utilityCard.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onUtilityCardClicked(v);
+        utilityCard.setOnClickListener(v -> showMessage("This Utility section has not been developed.."));
 
-            }
+        CardView financeCard = view.findViewById(R.id.Finance);
+        financeCard.setOnClickListener(v -> showMessage("This Finance section has not been developed.."));
 
-        });
-        CardView finance = view.findViewById(R.id.Finance);
-        finance.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onUtilityCardClicked1(v);
+        CardView academicCard = view.findViewById(R.id.Academic);
+        academicCard.setOnClickListener(v -> showMessage("This Academic section has not been developed.."));
 
-            }
+        CardView mainIncomeCard = view.findViewById(R.id.Mainincome);
+        mainIncomeCard.setOnClickListener(v -> showMessage("This Main Income section has not been developed.."));
 
-        });
-        CardView academic = view.findViewById(R.id.Academic);
-        academic.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onUtilityCardClicked(v);
+        CardView extraIncomeCard = view.findViewById(R.id.Extraincomecard);
+        extraIncomeCard.setOnClickListener(v -> showMessage("This Extra Income section has not been developed.."));
 
-            }
+        CardView settingCard = view.findViewById(R.id.Setting);
+        settingCard.setOnClickListener(v -> showMessage("This Setting section has not been developed.."));
 
-        });
-        CardView Mainincome = view.findViewById(R.id.Mainincome);
-        Mainincome.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onUtilityCardClicked(v);
+        CardView reportCard = view.findViewById(R.id.Report);
+        reportCard.setOnClickListener(v -> showMessage("This Report section has not been developed.."));
 
-            }
-
-        });
-        CardView Extraincomecard = view.findViewById(R.id.Extraincomecard);
-        Extraincomecard.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onUtilityCardClicked(v);
-
-            }
-
-        });
-        CardView Profile = view.findViewById(R.id.Profile);
-        Profile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onUtilityCardClicked(v);
-
-            }
-
-        });
-        CardView Setting = view.findViewById(R.id.Setting);
-        Setting.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onUtilityCardClicked(v);
-
-            }
-
-        });
-        CardView Report = view.findViewById(R.id.Report);
-        Report.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onUtilityCardClicked(v);
-
-            }
-
-        });
 
 
         return view;
@@ -126,14 +79,14 @@ public class dashboardFragment extends Fragment {
     private void fetchData() {
         progressBar.setVisibility(View.VISIBLE);
 
-        // Fetch income data
+
         incomeCollection.get().addOnCompleteListener(incomeTask -> {
             if (incomeTask.isSuccessful()) {
                 QuerySnapshot incomeSnapshot = incomeTask.getResult();
                 if (incomeSnapshot != null) {
                     double totalIncome = calculateTotalAmount(incomeSnapshot);
                     float totalIncomeFloat = (float) totalIncome;
-                    incomeTotalDashboard.setText("LKR " +  String.format("%.2f", totalIncomeFloat));
+                    incomeTotalDashboard.setText("LKR " + String.format("%.2f", totalIncomeFloat));
 
                     // Fetch expenses data
                     expensesCollection.get().addOnCompleteListener(expensesTask -> {
@@ -184,71 +137,19 @@ public class dashboardFragment extends Fragment {
         }
         return totalAmount;
     }
-    //onUtilityCardClicked
-    public void onUtilityCardClicked(View view) {
-        showMessage("This Utility section has not been developed..");
-    }
+
     private void showMessage(String message) {
         Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
     }
 
-    //onUtilityCardClicked1
-    public void onUtilityCardClicked1(View view) {
-        showMessage1("This Finance section has not been developed..");
-    }
+    private void openProfileFragment() {
+        FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-    private void showMessage1(String message) {
-        Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
-    }
+        ProfileFragment fragment = new ProfileFragment();
 
-    ////onUtilityCardClicked2
-    public void onUtilityCardClicked2(View view) {
-        showMessage2("This Academic section has not been developed..");
+        fragmentTransaction.replace(R.id.framelayout01, fragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
     }
-    private void showMessage2(String message) {
-        Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
-    }
-
-    ////onUtilityCardClicked3
-    public void onUtilityCardClicked3(View view) {
-        showMessage3("This Main Income section has not been developed..");
-    }
-    private void showMessage3(String message) {
-        Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
-    }
-
-    ////onUtilityCardClicked4
-    public void onUtilityCardClicked4(View view) {
-        showMessage4("This Extra Income section has not been developed..");
-    }
-    private void showMessage4(String message) {
-        Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
-    }
-
-    ////onUtilityCardClicked5
-    public void onUtilityCardClicked5(View view) {
-        showMessage5("This Profile section has not been developed..");
-    }
-    private void showMessage5(String message) {
-        Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
-    }
-
-    ////onUtilityCardClicked6
-    public void onUtilityCardClicked6(View view) {
-        showMessage6("This Setting section has not been developed..");
-    }
-    private void showMessage6(String message) {
-        Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
-    }
-
-    ////onUtilityCardClicked7
-    public void onUtilityCardClicked7(View view) {
-        showMessage7("This Report section has not been developed..");
-    }
-    private void showMessage7(String message) {
-        Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
-    }
-
-
-
 }
