@@ -28,21 +28,22 @@ public class ExpenseDetailsFragment extends DialogFragment {
         Button editButton = view.findViewById(R.id.editButton);
         Button deleteButton = view.findViewById(R.id.deleteButton);
 
-        // Extract details from the DocumentSnapshot
+
         String amount = documentSnapshot.getString("amount");
         String dateTime = documentSnapshot.getString("date_time");
         String description = documentSnapshot.getString("description");
         String expenseType = documentSnapshot.getString("expense_type");
 
-        // Display details in the TextView
-        String expenseDetails = "Date: " + dateTime + "\n"
-                + "LKR: " + amount + "\n"
-                + "Expense Type: " + expenseType + "\n"
-                + "Description: " + description;
+
+        String expenseDetails =
+                "Expense Type: " + expenseType + "\n"
+                + "LKR : " + amount + "\n"
+                + "Date : " + dateTime + "\n"
+                + "Description: " + description+"\n\n";
 
         detailsTextView.setText(expenseDetails);
 
-        // Set click listeners for buttons
+
         editButton.setOnClickListener(v -> {
             // Handle edit button click
             // Implement your edit logic here

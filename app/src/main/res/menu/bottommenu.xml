@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:id="@+id/dashboard"
-        android:title="@string/dashboard"
+        android:title="@string/home1"
         android:icon="@drawable/dashboard"/>
 
     <item android:id="@+id/income"

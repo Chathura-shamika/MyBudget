@@ -14,19 +14,12 @@
         android:layout_width="391dp"
         android:layout_height="58dp">
 
-        <TextView
+        <ImageView
             android:id="@+id/menubar"
-            android:layout_width="29dp"
-            android:layout_height="25dp"
-            android:gravity="center"
-            android:textSize="12sp"
-            android:textStyle="bold"
-            app:drawableTopCompat="@drawable/hamburge"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.515"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="16dp" />
+            android:src="@drawable/mybuget"/>
 
         <TextView
             android:layout_width="65dp"
@@ -36,9 +29,10 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/menubar"
-            app:layout_constraintHorizontal_bias="0.673"
+            app:layout_constraintHorizontal_bias="0.551"
             app:layout_constraintStart_toStartOf="@+id/help_top_bar"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.511" />
 
         <TextView
             android:id="@+id/about_top_bar"

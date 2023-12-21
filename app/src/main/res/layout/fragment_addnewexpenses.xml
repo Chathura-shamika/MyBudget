@@ -70,17 +70,17 @@
                     app:drawableTopCompat="@drawable/academic" />
 
                 <Button
-                    android:id="@+id/Otherpaymnet"
+                    android:id="@+id/Helthcard"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_margin="5dp"
                     android:gravity="center"
                     android:padding="5dp"
-                    android:text="Other"
+                    android:text="Helth"
                     android:textColor="@color/black"
                     app:backgroundTint="#FFD4F8"
                     app:cornerRadius="0dp"
-                    app:drawableTopCompat="@drawable/other" />
+                    app:drawableTopCompat="@drawable/helthicon" />
             </LinearLayout>
 
             <TextView

@@ -33,10 +33,11 @@ public class IncomeDetailsFragment extends DialogFragment {
         String incomeType = documentSnapshot.getString("income_type");
 
         // Display details in the TextView
-        String incomeDetails = "Date: " + dateTime + "\n"
+        String incomeDetails =
+                "Income Type: " + incomeType + "\n"
                 + "LKR: " + amount + "\n"
-                + "Income Type: " + incomeType + "\n"
-                + "Description: " + description;
+                +"Date: " + dateTime + "\n"
+                + "Description: " + description+"\n\n";
 
         detailsTextView.setText(incomeDetails);
 

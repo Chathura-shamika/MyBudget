@@ -38,12 +38,14 @@ public class dashboardFragment extends Fragment {
         totalExpensesTextView = view.findViewById(R.id.totalExpensesTextView1);
         balanceTextView = view.findViewById(R.id.totalBalance);
 
+
         firestore = FirebaseFirestore.getInstance();
         mAuth = FirebaseAuth.getInstance();
         incomeCollection = firestore.collection("income");
         expensesCollection = firestore.collection("expenses");
 
         fetchData();
+
 
 
         CardView utilityCard = view.findViewById(R.id.Utilitycard);
@@ -68,7 +70,7 @@ public class dashboardFragment extends Fragment {
         academic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onUtilityCardClicked(v);
+                onUtilityCardClicked2(v);
 
             }
 
@@ -77,7 +79,7 @@ public class dashboardFragment extends Fragment {
         Mainincome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onUtilityCardClicked(v);
+                onUtilityCardClicked3(v);
 
             }
 
@@ -86,25 +88,19 @@ public class dashboardFragment extends Fragment {
         Extraincomecard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onUtilityCardClicked(v);
+                onUtilityCardClicked4(v);
 
             }
 
         });
-        CardView Profile = view.findViewById(R.id.Profile);
-        Profile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onUtilityCardClicked(v);
 
-            }
 
-        });
+
         CardView Setting = view.findViewById(R.id.Setting);
         Setting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onUtilityCardClicked(v);
+                onUtilityCardClicked6(v);
 
             }
 
@@ -113,7 +109,16 @@ public class dashboardFragment extends Fragment {
         Report.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onUtilityCardClicked(v);
+                onUtilityCardClicked7(v);
+
+            }
+
+        });
+        CardView Helth = view.findViewById(R.id.helth);
+        Helth.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onUtilityCardClicked8(v);
 
             }
 
@@ -122,6 +127,7 @@ public class dashboardFragment extends Fragment {
 
         return view;
     }
+
 
     private void fetchData() {
         progressBar.setVisibility(View.VISIBLE);
@@ -248,6 +254,13 @@ public class dashboardFragment extends Fragment {
     private void showMessage7(String message) {
         Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
     }
+    public void onUtilityCardClicked8(View view) {
+        showMessage8("This Helth section has not been developed..");
+    }
+    private void showMessage8(String message) {
+        Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
+    }
+
 
 
 
