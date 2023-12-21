@@ -68,7 +68,7 @@ public class dashboardFragment extends Fragment {
         academic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onUtilityCardClicked(v);
+                onUtilityCardClicked2(v);
 
             }
 
@@ -77,7 +77,7 @@ public class dashboardFragment extends Fragment {
         Mainincome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onUtilityCardClicked(v);
+                onUtilityCardClicked3(v);
 
             }
 
@@ -86,7 +86,7 @@ public class dashboardFragment extends Fragment {
         Extraincomecard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onUtilityCardClicked(v);
+                onUtilityCardClicked4(v);
 
             }
 
@@ -95,7 +95,7 @@ public class dashboardFragment extends Fragment {
         Profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onUtilityCardClicked(v);
+                onUtilityCardClicked5(v);
 
             }
 
@@ -104,7 +104,7 @@ public class dashboardFragment extends Fragment {
         Setting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onUtilityCardClicked(v);
+                onUtilityCardClicked6(v);
 
             }
 
@@ -113,7 +113,7 @@ public class dashboardFragment extends Fragment {
         Report.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onUtilityCardClicked(v);
+                onUtilityCardClicked7(v);
 
             }
 

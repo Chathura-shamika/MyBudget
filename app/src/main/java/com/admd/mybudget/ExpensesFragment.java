@@ -71,9 +71,10 @@ public class ExpensesFragment extends Fragment {
                         String description = documentSnapshot.getString("description");
                         String expenseType = documentSnapshot.getString("expense_type");
 
-                        String expenseText ="Date: " + dateTime + "                                                                 LKR: " + amount + "\n"
-                                + "Expense Type: " + expenseType + "\n"
-                                + "Description: " + description + "\n\n";
+                        String expenseText =
+                                 "Expense Type: " + expenseType + "\n"
+                                 + "LKR: " + amount + "\n"
+                                 +"Date: " + dateTime  + "\n\n";
 
                         if (userIDD != null && userIDD.equals(userID)) {
                             CardView cardView = createCardView(expenseText, documentSnapshot);

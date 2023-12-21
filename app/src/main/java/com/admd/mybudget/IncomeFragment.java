@@ -66,9 +66,10 @@ public class IncomeFragment extends Fragment {
                         String incomeType = documentSnapshot.getString("income_type");
                         String userIDD = documentSnapshot.getString("user_ID");
 
-                        String content = "Date: " + dateTime + "                                                                 LKR: " + amount + "\n"
-                                + "Income Type: " + incomeType + "\n"
-                                + "Description: " + description + "\n\n";
+                        String content =
+                                 "Income Type :" + incomeType + "\n"
+                                + "LKR :" + amount + "\n"
+                                +"Date :" + dateTime +"\n\n";
 
                         if (userIDD != null && userIDD.equals(userID)) {
                             CardView cardView = createCardView(content, documentSnapshot);
