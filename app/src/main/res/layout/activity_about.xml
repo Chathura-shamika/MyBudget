@@ -55,7 +55,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Advance Mobile Davalopment-640"
+                android:text="Advance Mobile Davalopment - COM640"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 

@@ -67,7 +67,7 @@ public class HomeActivity extends AppCompatActivity {
         topbarhelp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), HomeActivity.class);
+                Intent intent = new Intent(v.getContext(), Help.class);
                 v.getContext().startActivity(intent);
             }
         });
