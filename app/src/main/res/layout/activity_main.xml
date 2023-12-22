@@ -44,7 +44,8 @@
                     android:autofillHints=""
                     android:hint="@string/email"
                     android:inputType="textEmailAddress"
-                    android:text="shamika@gmail.com" />
+                    android:text="chathura@gmail.com"
+                    />
 
                 <EditText
                     android:id="@+id/password_login"
@@ -53,7 +54,8 @@
                     android:layout_margin="10dp"
                     android:hint="@string/password"
                     android:inputType="textPassword"
-                    android:text="123456" />
+                    android:text="123456"
+                    />
 
                 <Button
                     android:id="@+id/button_login"

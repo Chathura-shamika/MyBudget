@@ -9,13 +9,16 @@
         android:layout_height="match_parent"
         android:orientation="horizontal"
         tools:context=".ProfileFragment">
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="15dp">
+            android:layout_gravity="center"
+            android:padding="20dp">
 
 
             <TextView
@@ -49,7 +52,7 @@
                 android:id="@+id/linearLayout3"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_marginTop="26dp"
+                android:layout_marginTop="8dp"
                 android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -59,18 +62,15 @@
 
                 <TextView
                     android:id="@+id/Name"
-                    android:layout_width="40dp"
+                    android:layout_width="70dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_weight="1"
                     android:text="Full Name" />
 
                 <EditText
                     android:id="@+id/editName"
-                    android:layout_width="wrap_content"
-                    android:layout_height="45dp"
-                    android:layout_weight="1"
-                    android:ems="10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:inputType="text" />
 
             </LinearLayout>
@@ -88,17 +88,15 @@
 
                 <TextView
 
-                    android:layout_width="40dp"
+                    android:layout_width="70dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_weight="1"
                     android:text="Mobile" />
 
                 <EditText
                     android:id="@+id/editMnumber"
-                    android:layout_width="wrap_content"
-                    android:layout_height="45dp"
-                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:ems="10"
                     android:inputType="phone" />
 
@@ -117,17 +115,15 @@
 
                 <TextView
 
-                    android:layout_width="40dp"
+                    android:layout_width="70dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_weight="1"
                     android:text="Email" />
 
                 <EditText
                     android:id="@+id/editEmail"
-                    android:layout_width="wrap_content"
-                    android:layout_height="45dp"
-                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:ems="10"
                     android:inputType="textEmailAddress" />
 
@@ -156,29 +152,30 @@
                 android:background="@color/black"
                 app:layout_constraintBottom_toTopOf="@+id/textView14"
                 app:layout_constraintTop_toBottomOf="@+id/editprofile"
+                app:layout_constraintVertical_bias="0.217"
                 tools:ignore="MissingConstraints"
-                tools:layout_editor_absoluteX="15dp" />
+                tools:layout_editor_absoluteX="20dp" />
 
             <TextView
                 android:id="@+id/textView14"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="12dp"
                 android:layout_marginBottom="8dp"
                 android:text="Change password"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@+id/linearLayout6"
                 app:layout_constraintTop_toBottomOf="@+id/editprofile"
-                app:layout_constraintVertical_bias="1.0"
+                app:layout_constraintVertical_bias="0.181"
                 tools:ignore="MissingConstraints"
-                tools:layout_editor_absoluteX="15dp" />
+                tools:layout_editor_absoluteX="20dp" />
 
             <LinearLayout
 
                 android:id="@+id/linearLayout6"
                 android:layout_width="match_parent"
                 android:layout_height="38dp"
-                android:layout_marginTop="68dp"
+                android:layout_marginTop="36dp"
                 android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
@@ -187,16 +184,15 @@
 
                 <TextView
 
-                    android:layout_width="140dp"
+                    android:layout_width="70dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_weight="1"
                     android:text="Password" />
 
                 <EditText
                     android:id="@+id/editpassword"
-                    android:layout_width="wrap_content"
-                    android:layout_height="45dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:ems="10"
                     android:inputType="textPassword" />
 
@@ -216,16 +212,16 @@
 
                 <TextView
 
-                    android:layout_width="140dp"
+                    android:layout_width="70dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_weight="1"
+
                     android:text="Confirm Password" />
 
                 <EditText
                     android:id="@+id/editconfirmpassword"
-                    android:layout_width="wrap_content"
-                    android:layout_height="45dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:ems="10"
                     android:inputType="textPassword" />
 
@@ -235,17 +231,19 @@
                 android:id="@+id/updatepassword"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
                 android:layout_weight="1"
                 android:text="Change Password"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout7"
-                app:layout_constraintVertical_bias="0.189" />
+                app:layout_constraintVertical_bias="1.0" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-        </ScrollView>
+    </ScrollView>
 
-    </LinearLayout>
+</LinearLayout>
 
