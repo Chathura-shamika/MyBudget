@@ -15,7 +15,8 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="15dp">
+            android:layout_gravity="center"
+            android:padding="20dp">
 
 
             <TextView
@@ -59,17 +60,15 @@
 
                 <TextView
                     android:id="@+id/Name"
-                    android:layout_width="40dp"
+                    android:layout_width="70dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_weight="1"
                     android:text="Full Name" />
 
                 <EditText
                     android:id="@+id/editName"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="45dp"
-                    android:layout_weight="1"
                     android:ems="10"
                     android:inputType="text" />
 
@@ -88,17 +87,15 @@
 
                 <TextView
 
-                    android:layout_width="40dp"
+                    android:layout_width="70dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_weight="1"
                     android:text="Mobile" />
 
                 <EditText
                     android:id="@+id/editMnumber"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="45dp"
-                    android:layout_weight="1"
                     android:ems="10"
                     android:inputType="phone" />
 
@@ -117,17 +114,15 @@
 
                 <TextView
 
-                    android:layout_width="40dp"
+                    android:layout_width="70dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_weight="1"
                     android:text="Email" />
 
                 <EditText
                     android:id="@+id/editEmail"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="45dp"
-                    android:layout_weight="1"
                     android:ems="10"
                     android:inputType="textEmailAddress" />
 
@@ -187,15 +182,14 @@
 
                 <TextView
 
-                    android:layout_width="140dp"
+                    android:layout_width="70dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_weight="1"
                     android:text="Password" />
 
                 <EditText
                     android:id="@+id/editpassword"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="45dp"
                     android:ems="10"
                     android:inputType="textPassword" />
@@ -216,15 +210,15 @@
 
                 <TextView
 
-                    android:layout_width="140dp"
+                    android:layout_width="70dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_weight="1"
+
                     android:text="Confirm Password" />
 
                 <EditText
                     android:id="@+id/editconfirmpassword"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="45dp"
                     android:ems="10"
                     android:inputType="textPassword" />
