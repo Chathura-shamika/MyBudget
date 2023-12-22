@@ -44,5 +44,6 @@
     <string name="full_name">Full Name</string>
     <string name="student_number">Student Number: 23011199</string>
     <string name="home1">Home</string>
+    <string name="education">Education</string>
 
 </resources>
