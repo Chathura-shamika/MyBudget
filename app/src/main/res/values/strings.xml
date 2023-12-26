@@ -46,5 +46,8 @@
     <string name="student_number">Student Number: 23011199</string>
     <string name="home1">Home</string>
     <string name="education">Education</string>
+    <string name="helth">Helth</string>
+    <string name="other">Other</string>
+    <string name="health">Health</string>
 
 </resources>

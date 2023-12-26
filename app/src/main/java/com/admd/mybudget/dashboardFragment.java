@@ -71,7 +71,14 @@ public class dashboardFragment extends Fragment {
         CardView reportCard = view.findViewById(R.id.Report);
         reportCard.setOnClickListener(v -> showMessage("This Report section has not been developed.."));
 
+        CardView Helthcard = view.findViewById(R.id.Helthcard);
+        Helthcard.setOnClickListener(v -> showMessage("This Health section has not been developed.."));
 
+        CardView foodcard = view.findViewById(R.id.foodcard);
+        foodcard.setOnClickListener(v -> showMessage("This Food section has not been developed.."));
+
+        CardView Othercard = view.findViewById(R.id.Othercard);
+        Othercard.setOnClickListener(v -> showMessage("This Other section has not been developed.."));
 
         return view;
     }
